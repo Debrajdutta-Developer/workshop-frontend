@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-900 text-slate-250 font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-amber-500/30 text-white;
+  }
+
+  /* Slim, dark-themed scrollbar to match the "mission control" aesthetic */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0e1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2740;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a3454;
+  }
+}
+
+@layer utilities {
+  /* Reusable decorative grid overlay used behind hero/section panels */
+  .bg-grid-overlay {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 40px rgba(253, 184, 19, 0.35);
+  }
+}
